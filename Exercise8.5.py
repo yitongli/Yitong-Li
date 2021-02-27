@@ -34,3 +34,21 @@ for line in fh:
 
 print("There were", count, "lines in the file with From as the first word")
 
+#Again, another way to complete this exereise
+
+fname = input("Enter file name: ")
+if len(fname) < 1 : fname = "mbox-short.txt"
+
+fh = open(fname)
+
+for line in fh:
+    line = line.rstrip()
+    words = line.split()
+    if len(words) < 1:
+        continue
+    if words[0] != 'From' :
+        continue
+    print (words[1])
+
+
+
